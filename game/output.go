@@ -2,7 +2,6 @@ package game
 
 import (
 	"fmt"
-	"os"
 )
 
 var printOrder []int = []int{
@@ -30,8 +29,6 @@ var extras map[int]string = map[int]string{
 }
 
 func (b *Board) String() string {
-	fmt.Fprintf(os.Stderr, "Enter Board.String\n")
-	defer fmt.Fprintf(os.Stderr, "Exit Board.String\n")
 	var stringrep string
 	for _, slot := range printOrder {
 		stringrep += b.Mark(slot)
