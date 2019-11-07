@@ -14,5 +14,9 @@ func main() {
 		moveSlot = game.ReadMove(bd, moveSlot)
 		fmt.Printf("Read %d\n", moveSlot)
 		bd.MakeMove(moveSlot, game.Min)
+		if bd.CheckWin(moveSlot) {
+			fmt.Printf("Win! with %d\n", moveSlot)
+			break
+		}
 	}
 }
