@@ -8,7 +8,6 @@ import (
 
 func ReadMove(bd *Board, lastSlot int) int {
 	moveSubboard := (lastSlot % 10) * 10
-	fmt.Fprintf(os.Stderr, "reading move in subboard %d\n", moveSubboard)
 	var cellNo int
 READMOVE:
 	for {
@@ -30,6 +29,5 @@ READMOVE:
 			break READMOVE
 		}
 	}
-	fmt.Fprintf(os.Stderr, "Actually using slot %d\n", moveSubboard+cellNo)
 	return moveSubboard + cellNo
 }
