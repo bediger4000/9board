@@ -9,6 +9,18 @@ import (
 func ReadMove(bd *Board, lastSlot int) int {
 	moveSubboard := (lastSlot % 10) * 10
 	var cellNo int
+
+	// First move of the game
+	if lastSlot < 0 {
+		_, _ = fmt.Scanf("%d\n", &cellNo)
+		for cellNo < 0 || cellNo > 88 {
+			if cellNo < 0 || cellNo > 88 {
+				fmt.Printf("Choose a number between 0 and 88, try again\n")
+			}
+			_, _ = fmt.Scanf("%d\n", &cellNo)
+		}
+		return cellNo
+	}
 READMOVE:
 	for {
 		fmt.Printf("%sYour move: ", bd.SubboardString(lastSlot))
