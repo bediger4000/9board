@@ -1,11 +1,7 @@
 package game
 
-import (
-	"fmt"
-	"os"
-)
-
+// MakeMove takes a slot, values 0 - 88 inclusive,
+// and marks the board-of-boards appropriately
 func (b *Board) MakeMove(slot int, player Player) {
-	fmt.Fprintf(os.Stderr, "enter Board.MakeMove\n")
 	b.Cell[slot] = player
 }
